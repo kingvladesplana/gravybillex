@@ -1,0 +1,163 @@
+// GLOBAL
+$primaryColor: #36c6da;
+$secondaryColor: #000000;
+$lightColor: #F0FDFF;
+
+$primaryFont: 'Lato', sans-serif;
+$paragraphFont: 'Roboto', sans-serif;
+
+
+@mixin primaryButton {
+    padding: 0.7rem 2.5rem 0.7rem 2.5rem;
+    font-family: $primaryFont;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: $primaryColor;
+    transition: 0.5s;
+    color: #fff,
+};
+
+@mixin secondaryButton {
+    @include primaryButton;
+    border: 1px solid $primaryColor;
+    background-color: #fff;
+    color: $primaryColor;
+}
+
+@mixin heading {
+    font-size: 36px;
+    line-height: 36px;
+    font-family: $primaryFont;
+    color: $primaryColor;
+    font-weight: bold;
+}
+
+@mixin subHeading {
+    font-size: 20px;
+    line-height: 20px;
+    font-family: $primaryFont;
+}
+
+@mixin paragraph {
+    font-size: 15px;
+    line-height: 23px;
+    font-family: $primaryFont;
+}
+
+
+// Navbar
+.navBar {
+    // background-color: #fff;
+    #logo {
+        color: $primaryColor;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .navLinks a {
+        color: $secondaryColor;
+        transition: 0.5s;
+        font-weight: 600;
+        // font-size: 16px;
+    }
+    .navLinks a:hover {
+        color: $primaryColor;
+        transition: 0.5s;
+    }
+
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.05);
+}
+
+.btn-primary {
+    @include primaryButton;
+    background-color: $primaryColor
+};
+
+.btn-secondary {
+    @include secondaryButton;
+}
+
+
+
+// Register
+
+#regfields {
+
+    select, input {
+    width: 100%;
+    border: 1px solid #666;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    }
+
+    .btn-primary {
+        @include primaryButton;
+        background: $primaryColor;
+    }
+}
+
+#mainformcontainer {
+    h1 {
+        @include heading;
+        margin: 0 0 30px 0;
+        color: black;
+    }
+}
+
+#form-box {
+    border-radius:10px;
+    box-shadow: 0px 6px 14px 14px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0px 6px 14px 14px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0px 6px 14px 14px rgba(0,0,0,0.05);
+}
+
+
+// Homepage-1
+#hero-section {
+    background-image: url("/storage/images/hero-bg.png");
+    img {
+        width: 665px;
+        height: auto;
+        object-fit: contain;
+        box-shadow: 0px 13px 22px 0px rgba(0,0,0,0.19);;
+    }
+    h1 {
+    @include heading;
+    }
+
+    p {
+        @include paragraph;
+    }
+
+    #start {
+        @include primaryButton;
+    }
+
+    #howitworks {
+        @include secondaryButton;
+    }
+}
+
+#section-2 {
+    background-color: $lightColor;
+    img {
+        object-fit: contain;
+    }
+
+    h1 {
+        @include heading;
+        color: black;
+    }
+
+    p {
+        @include paragraph;
+    }
+
+    button {
+        @include primaryButton;
+    }
+}
